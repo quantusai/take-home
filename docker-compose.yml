@@ -1,0 +1,29 @@
+version: "2.1"
+services:
+  db:
+    container_name: redox_postgres
+    image: postgres
+    ports:
+      - 6432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "redoxdb"
+      POSTGRES_USER: "redox"
+      POSTGRES_PASSWORD: "redox"
+
+  server:
+    container_name: redox_server
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - 8888:80
+    volumes:
+      - .:/opt/app:rw
+      - /opt/app/node_modules
+    environment:
+      NODE_ENV: development
+
+volumes:
+  db-data:
