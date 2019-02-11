@@ -15,17 +15,20 @@
     "@types/react-dom": "^16.8.0",
     "css-loader": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.10",
+    "nodemon-webpack-plugin": "^4.0.7",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.2",
     "typescript": "^3.3.3",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
   },
   "scripts": {
-    "start:server": "./node_modules/.bin/node ./dist/server.js",
-    "build:server": "webpack --config ./webpack.server.config.js",
-    "build:frontend": "webpack --config ./webpack.frontend.config.js",
-    "watch:server": "webpack --watch --config ./webpack.server.config.js",
+    "start:server": "node ./dist/server.js",
+    "build:server": "NODE_ENV=production webpack --config ./webpack.server.config.js",
+    "build:frontend": "NODE_ENV=production webpack --config ./webpack.frontend.config.js",
+    "watch:server": "webpack --display=minimal --watch --config ./webpack.server.config.js",
     "watch:frontend": "webpack --watch --config ./webpack.frontend.config.js"
   },
   "repository": {

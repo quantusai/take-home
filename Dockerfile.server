@@ -1,5 +1,0 @@
-FROM node:10
-
-WORKDIR /opt/app
-
-RUN npm install

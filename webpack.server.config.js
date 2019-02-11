@@ -1,4 +1,5 @@
 const path = require("path");
+const NodemonPlugin = require("nodemon-webpack-plugin");
 
 // Backend server Webpack Config
 const serverConfig = {
@@ -27,7 +28,12 @@ const serverConfig = {
   output: {
     filename: "server.js",
     path: __dirname + "/dist"
-  }
+  },
+  plugins: []
 };
+
+if (process.env.NODE_ENV != "production") {
+  serverConfig.plugins.push(new NodemonPlugin());
+}
 
 module.exports = serverConfig;

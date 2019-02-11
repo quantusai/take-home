@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   db:
-    container_name: redox_postgres
+    container_name: postgres
     image: postgres
     ports:
       - 6432:5432
@@ -16,10 +16,27 @@ services:
     container_name: redox_server
     build:
       context: .
-      dockerfile: Dockerfile.server
+      dockerfile: Dockerfile
     ports:
-      - 8888:3000
-    command: "npm run start:server"
+      - 3000:3000
+    command: "npm run watch:server"
+    restart: always
+    volumes:
+      - .:/opt/app
+      - /opt/app/node_modules
+    environment:
+      NODE_ENV: development
+      DATABASE: development
+      DATABASE_HOST: development
+      DATABASE_PASSWORD: development
+
+  frontend:
+    container_name: redox_frontend
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "npm run watch:frontend"
     volumes:
       - .:/opt/app
       - /opt/app/node_modules
