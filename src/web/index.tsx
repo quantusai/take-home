@@ -1,11 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-const Hello = () => {
+const App = () => {
   return (
     <>
-      <h1> Hello </h1>
+      {[1,2,3].map(_ => <h1> Redox Takehome Assessment</h1>)}
     </>
   );
 };
-ReactDOM.render(<Hello />, document.getElementById("app"));
+
+ReactDOM.render(<App />, document.getElementById("app"));

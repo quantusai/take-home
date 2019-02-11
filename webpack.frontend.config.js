@@ -17,6 +17,9 @@ const webConfig = {
     filename: "web.bundle.js",
     path: __dirname + "/dist"
   },
+  watchOptions: {
+    poll: true
+  },
   module: {
     rules: [
       {

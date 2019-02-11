@@ -22,14 +22,15 @@
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "start:server": "node ./dist/server.js",
-    "build:server": "NODE_ENV=production webpack --config ./webpack.server.config.js",
-    "build:frontend": "NODE_ENV=production webpack --config ./webpack.frontend.config.js",
+    "build:server": "rm -r ./dist/server.js && NODE_ENV=production webpack --config ./webpack.server.config.js",
+    "build:frontend": "rm -r ./dist/web.bundle.js && NODE_ENV=production webpack --config ./webpack.frontend.config.js",
     "watch:server": "webpack --display=minimal --watch --config ./webpack.server.config.js",
-    "watch:frontend": "webpack --watch --config ./webpack.frontend.config.js"
+    "watch:frontend": "webpack-dev-server --config ./webpack.frontend.config.js --hot --progress --colors --host 0.0.0.0 --port 8080"
   },
   "repository": {
     "type": "git",
