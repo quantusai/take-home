@@ -18,9 +18,10 @@ services:
       context: .
       dockerfile: Dockerfile.server
     ports:
-      - 8888:80
+      - 8888:3000
+    command: "npm run start:server"
     volumes:
-      - .:/opt/app:rw
+      - .:/opt/app
       - /opt/app/node_modules
     environment:
       NODE_ENV: development

@@ -1,7 +1,8 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const commonConfig = {
+// Frontend Webpack Config
+const webConfig = {
   mode: process.env.NODE_ENV || "development",
   node: {
     __dirname: false,
@@ -9,6 +10,12 @@ const commonConfig = {
   },
   resolve: {
     extensions: [".js", ".json", ".ts", "tsx"]
+  },
+  target: "web",
+  entry: "./src/web/index.tsx",
+  output: {
+    filename: "web.bundle.js",
+    path: __dirname + "/dist"
   },
   module: {
     rules: [
@@ -19,34 +26,7 @@ const commonConfig = {
         use: {
           loader: "ts-loader"
         }
-      }
-    ]
-  }
-};
-
-// Backend server Webpack Config
-const serverConfig = {
-  ...commonConfig,
-  target: "node",
-  entry: "./src/server/index.ts",
-  output: {
-    filename: "server.js",
-    path: __dirname + "/dist"
-  }
-};
-
-// Fronend Webpack Config
-const webConfig = {
-  ...commonConfig,
-  target: "web",
-  entry: "./src/web/index.tsx",
-  output: {
-    filename: "web.bundle.js",
-    path: __dirname + "/dist"
-  },
-  module: {
-    rules: [
-      ...commonConfig.module.rules,
+      },
       {
         test: /\.(scss|css)$/,
         use: ["style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
@@ -74,4 +54,4 @@ const webConfig = {
   ]
 };
 
-module.exports = [serverConfig, webConfig];
+module.exports = webConfig;

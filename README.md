@@ -1,3 +1,3 @@
-# take-home
+# take-home - SPA
 
-Take home exercise for SPA
+Take home with the SPA
