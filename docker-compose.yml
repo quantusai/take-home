@@ -37,7 +37,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8000:8080 
+      - 8000:8000 
     command: "npm run watch:frontend"
     volumes:
       - .:/opt/app
