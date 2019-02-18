@@ -1,17 +1,15 @@
 version: "2.1"
 services:
 
-  db:
-    container_name: postgres
-    image: postgres
+  postgres:
+    image: 'postgres:11'
     ports:
       - 6432:5432
-    volumes:
-      - db-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: "redoxdb"
-      POSTGRES_USER: "redox"
-      POSTGRES_PASSWORD: "redox"
+      POSTGRES_DB: redoxdb
+      POSTGRES_USER: redox
+      POSTGRES_PASSWORD: redox
+    
 
   server:
     container_name: redox_server
@@ -45,5 +43,5 @@ services:
     environment:
       NODE_ENV: development
 
-volumes:
-  db-data:
+# volumes:
+#   db-data:

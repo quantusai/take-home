@@ -9,6 +9,6 @@ module.exports = {
   },
   migrations: {
     tableName: 'knex_migrations',
-    extension: 'ts'
+    extension: ['js', 'ts']
   }
 };
