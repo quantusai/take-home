@@ -34,7 +34,9 @@
     "build:server": "rm -r ./dist/server.js && NODE_ENV=production webpack --config ./webpack.server.config.js",
     "build:frontend": "rm -r ./dist/web.bundle.js && NODE_ENV=production webpack --config ./webpack.frontend.config.js",
     "watch:server": "webpack --display=minimal --watch --config ./webpack.server.config.js",
-    "watch:frontend": "webpack-dev-server  --hot --progress --colors --host 0.0.0.0 --port 8000 --config ./webpack.frontend.config.js"
+    "watch:frontend": "webpack-dev-server  --hot --progress --colors --host 0.0.0.0 --port 8000 --config ./webpack.frontend.config.js",
+    "migrate:up": "./node_modules/.bin/knex migrate:latest --knexfile ./src/server/knexfile.ts",
+    "migrate:down": "./node_modules/.bin/knex migrate:rollback --knexfile ./src/server/knexfile.ts"
   },
   "repository": {
     "type": "git",
