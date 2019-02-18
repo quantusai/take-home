@@ -1,8 +1,10 @@
 // Update with your config settings.
 
+const env = process.env.NODE_ENV || '';
+const address = env === 'development' ? 'postgres:5432' : 'localhost:6432'
 module.exports = {
-  client: 'postgresql',
-  connection: 'postgresql://redox:redox@localhost:6432/redoxdb',
+  client: 'pg',
+  connection: `postgresql://redox:redox@${address}/redoxdb`,
   pool: {
     min: 2,
     max: 10

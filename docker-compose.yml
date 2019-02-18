@@ -24,7 +24,7 @@ services:
       - .:/opt/app
       - /opt/app/node_modules
     environment:
-      NODE_ENV: development
+      NODE_ENV: development  
       DATABASE: redoxdb 
       DATABASE_HOST: redox 
       DATABASE_PASSWORD: redox 
