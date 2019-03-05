@@ -59,7 +59,7 @@ app.post('/source', async (req: express.Request, res: express.Response) => {
   const source = req.body
   try{
     source.id = uuid();
-    const result = await knex('source').insert(source).returning('*');
+    const result = await knex('source').insert(source);
     res.status(201).send({data: result});
     return;
   } catch(e) {
@@ -72,7 +72,7 @@ app.put('/source/:id', async (req: express.Request, res: express.Response) => {
   try{
     const sourceId = req.param('id');
     const uSource = req.body;
-    const result = await knex('source').where({id: sourceId}).update(uSource).returning('*');
+    const result = await knex('source').where({id: sourceId}).update(uSource);
     if (!result){
       throw Error("Not Found");
     }
@@ -103,7 +103,7 @@ app.post('/message', async (req: express.Request, res: express.Response) => {
   const message = req.body
   try{
     message.id = uuid();
-    const result = await knex('message').insert(message).returning('*');
+    const result = await knex('message').insert(message);
     res.status(201).send({data: result});
     return;
   } catch(e) {
@@ -135,7 +135,7 @@ app.put('/message/:id', async (req: express.Request, res: express.Response) => {
   try{
     const messageId = req.param('id');
     const uMessage = req.body;
-    const result = await knex('source').where({id: messageId}).update(uMessage).returning('*');
+    const result = await knex('source').where({id: messageId}).update(uMessage);
     if (!result){
       throw Error("Not Found");
     }
