@@ -1,6 +1,7 @@
 import * as express from "express";
 import * as Knex from "knex";
 import * as bodyParser from "body-parser";
+import * as uuid from "uuid/v4";
 
 const knexcfg = require('./knexfile');
 
@@ -57,6 +58,7 @@ app.get('/source/:id/message', async (req: express.Request, res: express.Respons
 app.post('/source', async (req: express.Request, res: express.Response) => {
   const source = req.body
   try{
+    source.id = uuid();
     const result = await knex('source').insert(source).returning('*');
     res.status(201).send({data: result});
     return;
@@ -100,6 +102,7 @@ app.get('/message', async (req: express.Request, res: express.Response) => {
 app.post('/message', async (req: express.Request, res: express.Response) => {
   const message = req.body
   try{
+    message.id = uuid();
     const result = await knex('message').insert(message).returning('*');
     res.status(201).send({data: result});
     return;
