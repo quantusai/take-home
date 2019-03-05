@@ -6,7 +6,7 @@ import * as uuid from "uuid/v4";
 const knexcfg = require('./knexfile');
 
 const knex = Knex(knexcfg);
-const PORT = 3000;
+const PORT = 8888;
 const app: express.Application = express();
 
 app.use(bodyParser.json());
