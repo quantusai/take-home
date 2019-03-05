@@ -33,19 +33,14 @@ You are working with a complicated network of nodes that send messages between e
 
 Your take home assessment will be to create a front end application and supporting backend API to fetch and view of the sources and messages in the network. There is a repo that will serve as a starting point that contains all the data to use as mock data for sources and message.
 
-### Given this data create a backend API that will be able to..
-1) Fetch all sources and their basic information (organization, created at, message count, etc)
-2) Fetch a single source’s information in greater details (organization, created at, message count, etc)
-3) Fetch all comments for a single post
+### Backend API that will be able to..
+Feel free to create and modify backened API endpoints. 
 
 ### Given this API create a front end view that…
 1) Allow a user to view all sources
 2) Allows a user to view a single source 
    - With more details about the source
    - All the messages for that source
-   - An element that displays the an average of message traffic for a source over the time periods of…
-        - A day
-        - A week
-        - An arbitrary hour window
+   - An element that displays the aggreate status of messages for a particular source (error, enqueued, finished, processing).
 
 The expected time commitment for this activity is around 4 hours. If you find yourself getting far beyond this number, stop, commit what you have, and we can pick it up from there. If you have any questions or suggested improvements, reach out!
