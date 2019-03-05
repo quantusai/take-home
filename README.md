@@ -34,7 +34,7 @@ You are working with a complicated network of nodes that send messages between e
 Your take home assessment will be to create a front end application and supporting backend API to fetch and view of the sources and messages in the network. There is a repo that will serve as a starting point that contains all the data to use as mock data for sources and message.
 
 ### Backend API that will be able to..
-Feel free to create and modify backened API endpoints. 
+Feel free to create and modify backend API endpoints and handlers. 
 
 ### Given this API create a front end view that…
 1) Allow a user to view all sources
