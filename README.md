@@ -37,4 +37,4 @@ Here is the basic API backend route structure we want to see:
    - All the messages for that source
    - An element that displays the aggreate status of messages for a particular source (error, enqueued, finished, processing).
 
-The expected time commitment for this activity is around 4 hours. If you find yourself getting far beyond this number, stop, commit what you have, and we can pick it up from there. If you have any questions or suggested improvements, reach out!
+The expected time commitment for this activity is around 5-10 hours. If you find yourself getting far beyond this number, stop, commit what you have, and we can pick it up from there. If you have any questions or suggested improvements, reach out!
