@@ -11,7 +11,7 @@
 ## Take Home Assessment
 You are working with a complicated network of nodes that send messages between each other. One common type of node in this network is a source who will generate messages to be transmitted to another node on the network. You need the create a view or series of views that allows a user to view a particular source and its messages. This is a highly simplified version of what the Redox engine dashboard current does.
 
-Your take home assessment will be to create a front end application and supporting backend API to fetch and view of the sources and messages in the network. There is a repo that will serve as a starting point that contains all the data to use as mock data for sources and message.
+Your take home assessment will be to create a front end application and supporting backend API to fetch and view the sources and messages in the network. There is a repo that will serve as a starting point that contains all the data to use as mock data for sources and message.
 
 ### Backend API 
 Given this data create a backend API that will be able to.
