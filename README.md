@@ -2,7 +2,7 @@
 
 ## Getting things up and running
 
-- Clone or [fork] (https://help.github.com/en/articles/fork-a-repo) this repoistory
+- Clone or [fork](https://help.github.com/en/articles/fork-a-repo) this repoistory
   - ```git clone git@github.com:100health/take-home.git```
 
 - Use tools of your choice to interact with the SQLite database (`db.sqlite`)
