@@ -42,4 +42,4 @@ The expected time commitment for this activity is around 5-10 hours. If you find
 ### Submission 
 
 1) Send us a link to the forked repo on your personal GitHub account.
-2) Zip/Tar the contents of your final project and send it to us via Dropbox or Google Drive link.  
+2) Zip/Tar the contents of your final project directory and send it to us via a Dropbox or Google Drive link.  
