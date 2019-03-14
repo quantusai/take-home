@@ -2,7 +2,7 @@
 
 ## Getting things up and running
 
-- Clone this repoistory
+- Clone or [fork] (https://help.github.com/en/articles/fork-a-repo) this repoistory
   - ```git clone git@github.com:100health/take-home.git```
 
 - Use tools of your choice to interact with the SQLite database (`db.sqlite`)
@@ -38,3 +38,5 @@ Here is the basic API backend route structure we want to see:
    - An element that displays the aggreate status of messages for a particular source (error, enqueued, finished, processing).
 
 The expected time commitment for this activity is around 5-10 hours. If you find yourself getting far beyond this number, stop, commit what you have, and we can pick it up from there. If you have any questions or suggested improvements, reach out!
+
+### Given this API create a front end view that…
