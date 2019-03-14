@@ -39,4 +39,7 @@ Here is the basic API backend route structure we want to see:
 
 The expected time commitment for this activity is around 5-10 hours. If you find yourself getting far beyond this number, stop, commit what you have, and we can pick it up from there. If you have any questions or suggested improvements, reach out!
 
-### Given this API create a front end view that…
+### Submission 
+
+1) Send us a link to the forked repo on your personal GitHub account.
+2) Zip/Tar the contents of your final project and send it to us via Dropbox or Google Drive link.  
