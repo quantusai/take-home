@@ -51,9 +51,10 @@ let Message = database.define('messages', {
 
 })
 
-let Resource = database.define('source', {
-  name: Sequelize.STRING
-
+let Resource = database.define('sources', {
+  name: Sequelize.STRING,
+  updatedat: Sequelize.STRING,
+  createdat: Sequelize.STRING
 })
 
 // Initialize epilogue

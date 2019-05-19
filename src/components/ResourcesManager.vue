@@ -8,11 +8,18 @@
           <thead>
             <tr>
               <th>ID</th>
+              <th>Name</th>
+              <th>Updated At</th>
+              <th>Created At</th>
+              <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="resource in resources" :key="resource.id">
               <td>{{ resource.id }}</td>
+              <td>{{ resource.name }}</td>
+              <td>{{ resource.updatedat }}</td>
+              <td>{{ resource.createdat }}</td>
               
                 <a href="#" @click.prevent="populateResourceToEdit(resource)">Edit</a> -
                 <a href="#" @click.prevent="deleteResource(resource.id)">Delete</a>
