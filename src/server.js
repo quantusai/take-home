@@ -62,6 +62,9 @@ epilogue.initialize({
   sequelize: database
 })
 
+// Sequalize will make its tables pluralized 
+// more info here https://stackoverflow.com/questions/21114499/how-to-make-sequelize-use-singular-table-names
+
 // Create the dynamic REST resource for our Message model
 let userResource = epilogue.resource({
   model: Message,

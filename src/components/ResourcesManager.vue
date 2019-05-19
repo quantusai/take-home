@@ -12,7 +12,7 @@
           </thead>
           <tbody>
             <tr v-for="resource in resources" :key="resource.id">
-              <td>{{ source.id }}</td>
+              <td>{{ resource.id }}</td>
               
                 <a href="#" @click.prevent="populateResourceToEdit(resource)">Edit</a> -
                 <a href="#" @click.prevent="deleteResource(resource.id)">Delete</a>

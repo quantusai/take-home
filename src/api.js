@@ -38,5 +38,17 @@ export default {
   },
   getResources () {
     return this.execute('get', '/resources')
+  },
+  getResource (id) {
+    return this.execute('get', `/resources/${id}`)
+  },
+  createResource (data) {
+    return this.execute('post', '/resources', data)
+  },
+  updateResource (id, data) {
+    return this.execute('put', `/resources/${id}`, data)
+  },
+  deleteResource (id) {
+    return this.execute('delete', `/resources/${id}`)
   }
 }
