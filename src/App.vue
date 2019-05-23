@@ -1,51 +1,62 @@
+
 <template>
   <div id="app">
-    <b-navbar toggleable="md" type="dark" variant="dark">
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand to="/">My Vue App</b-navbar-brand>
-      <b-collapse is-nav id="nav_collapse">
-        <b-navbar-nav>
-          <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item to="/posts-manager">Messages Manager</b-nav-item>
-          <b-nav-item to="/resources-manager">Resources Manager</b-nav-item>
-          <b-nav-item href="#" @click.prevent="login" v-if="!activeUser">Login</b-nav-item>
-          <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
-    <!-- routes will be rendered here -->
-    <router-view />
+    <auth-layout v-if="isAuth"></auth-layout>
+      <div class="admin-container" v-else>
+        <Sidebar :navItems="nav"/>
+        <div id="right-panel" class="right-panel">
+          <Header/>
+          <div class="content pb-0">
+              <transition enter-active-class="animated fadeIn">
+                <router-view></router-view>
+              </transition>
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
 <script>
+import nav from './nav'
+import Header from './components/Header.vue'
+import Sidebar from './components/Sidebar.vue'
+import AuthLayout from './layouts/AuthLayout.vue'
 
 export default {
-  name: 'app',
   data () {
     return {
-      activeUser: null
+      nav: nav.items
     }
   },
-  async created () {
-    await this.refreshActiveUser()
+  components: {
+    AuthLayout,
+    Header,
+    Sidebar
   },
-  watch: {
-    // everytime a route is changed refresh the activeUser
-    '$route': 'refreshActiveUser'
-  },
-  methods: {
-    login () {
-      this.$auth.loginRedirect()
+  computed: {
+    name () {
+      return this.$route.name
     },
-    async refreshActiveUser () {
-      this.activeUser = await this.$auth.getUser()
+    list () {
+      return this.$route.matched
     },
-    async logout () {
-      await this.$auth.logout()
-      await this.refreshActiveUser()
-      this.$router.push('/')
+    isAuth () {
+      return this.$route.path.match('auth')
     }
   }
 }
 </script>
+
+<style lang="scss">
+@import url('./assets/css/font-awesome.min.css');
+@import url('./assets/css/themify-icons.css');
+@import url('./assets/css/pe-icon-7-filled.css');
+@import url('./assets/css/flag-icon.min.css');
+@import url('./assets/css/cs-skin-elastic.css');
+
+@import "./assets/scss/style";
+
+button{
+    cursor: pointer;
+}
+</style>
