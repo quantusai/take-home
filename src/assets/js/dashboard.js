@@ -296,13 +296,13 @@ function getRandomData() {
     }
   });
 
-  function update_plot5() {
+  function updatePlot5() {
     plot5.setData([getRandomData()]);
     plot5.draw();
-    setTimeout(update_plot5, updateInterval);
+    setTimeout(updatePlot5, updateInterval);
   }
 
-  update_plot5();
+  updatePlot5();
 
 
 // Traffic Chart

@@ -1991,8 +1991,6 @@
         </card>
       </div>
     </div>
-
-
 </div>
 
 
@@ -2000,60 +1998,52 @@
 </template>
 
 <script>
-    import CardLine1Chart from './charts/CardLine1Chart.vue'
-    import CalloutChart from './charts/CalloutChart.vue'
-    import CardBarChart from './charts/CardBarChart.vue'
-    import CardLine2Chart from './charts/CardLine2Chart.vue'
-    import CardLine3 from './charts/CardLine3.vue'
-    import MainChart from './charts/MainChart.vue'
-    import SocialBoxChart from './charts/SocialBoxChart.vue'
-    import SalesChart from './charts/SalesChart.vue'
-    import CardLine4Chart from './charts/CardLine4Chart.vue'
-    import Revenue from './charts/Revenue.vue'
-    import RevenueBar from './charts/RevenueBar.vue'
-    import Gauges from './charts/Gauges.vue'
-    import AnimatedNumber from '../AnimatedNumber.vue'
-    import Dropdown from '../../directives/Dropdown';
+import CardLine1Chart from './charts/CardLine1Chart.vue'
+import CalloutChart from './charts/CalloutChart.vue'
+import CardBarChart from './charts/CardBarChart.vue'
+import CardLine2Chart from './charts/CardLine2Chart.vue'
+import CardLine3 from './charts/CardLine3.vue'
+import MainChart from './charts/MainChart.vue'
+import SocialBoxChart from './charts/SocialBoxChart.vue'
+import SalesChart from './charts/SalesChart.vue'
+import CardLine4Chart from './charts/CardLine4Chart.vue'
+import Revenue from './charts/Revenue.vue'
+import RevenueBar from './charts/RevenueBar.vue'
+import Gauges from './charts/Gauges.vue'
+import AnimatedNumber from '../AnimatedNumber.vue'
+import Dropdown from '../../directives/Dropdown'
 
-    export default {
-      name: 'widgets',
-      data () {
-        return {
-          msg: 'Widgets'
-        }
-      },
-     components: {
-            CardLine1Chart,
-            CalloutChart,
-            CardBarChart,
-            CardLine2Chart,
-            CardLine3,
-            MainChart,
-            SocialBoxChart,
-            SalesChart,
-            BasixGauge: Gauges,
-            BasixCounter: AnimatedNumber,
-            CardLine4Chart,
-            Revenue,
-            RevenueBar,
-            Dropdown
-         },
-        directives: {
-            dropdown: Dropdown
-        }
-    }
+export default {
+name: 'widgets',
+data () {
+return {
+    msg: 'Widgets'
+  }
+},
+components: {
+    CardLine1Chart,
+    CalloutChart,
+    CardBarChart,
+    CardLine2Chart,
+    CardLine3,
+    MainChart,
+    SocialBoxChart,
+    SalesChart,
+    BasixGauge: Gauges,
+    BasixCounter: AnimatedNumber,
+    CardLine4Chart,
+    Revenue,
+    RevenueBar,
+    Dropdown
+},
+directives: {
+    dropdown: Dropdown
+  }
+}
 </script>
 
 <style>
     .users{
-        .table th, .table td{
-            padding: .7rem 0;
-        }
-        .title{
-            font-size: .8rem;
-        }
-        .small {
-            font-size: 70%;
-        }
+
     }
 </style>

@@ -1,14 +1,14 @@
 <template>
   <div class="container-fluid mt-4">
-    <h1 class="h1">Messages Manager</h1>
+    <h1 class="h1">Messages</h1>
     <b-alert :show="loading" variant="info">Loading...</b-alert>
     <b-row>
       <b-col>
+        <b-card>
         <table class="table table-striped">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
               <th>GUID</th>
               <th>SOURCE ID</th>
               <th>Updated At</th>
@@ -19,11 +19,10 @@
           <tbody>
             <tr v-for="post in posts" :key="post.id">
               <td>{{ post.id }}</td>
-              <td>{{ post.title }}</td>
               <td>{{ post.guid }}</td>
               <td>{{ post.source_id }}</td>
-              <td>{{ post.updatedat }}</td>
-              <td>{{ post.createdat }}</td>
+              <td>{{ post.updatedat | formatDate }}</td>
+              <td>{{ post.createdat | formatDate }}</td>
               <td class="text-right">
                 <a href="#" @click.prevent="populateMessageToEdit(post)">Edit</a> -
                 <a href="#" @click.prevent="deleteMessage(post.id)">Delete</a>
@@ -31,6 +30,7 @@
             </tr>
           </tbody>
         </table>
+        </b-card>
       </b-col>
       <b-col lg="3">
         <b-card :title="(model.id ? 'Edit Message ID#' + model.id : 'New Message')">

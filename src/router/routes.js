@@ -1,4 +1,35 @@
 // Dynamic Loading Modules
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+// DEPRECATED FROM THEME IMPORT
+
 
 // Views
 const Dashboard = resolve => { require.ensure(['../views/Dashboard.vue'], ()=>{ resolve(require('../views/Dashboard.vue')); }); };
@@ -18,15 +49,12 @@ const SetsList = resolve => { require.ensure(['../components/icons/SetsList.vue'
 const Sets = resolve => { require.ensure(['../components/icons/Set.vue'], ()=>{ resolve(require('../components/icons/Set.vue')); }); };
 const Tables = resolve => { require.ensure(['../components/tables/Tables.vue'], ()=>{ resolve(require('../components/tables/Tables.vue')); }); };
 
-
 //Charts
 const ChartJS = resolve => { require.ensure(['../components/charts/ChartJS.vue'], ()=>{ resolve(require('../components/charts/ChartJS.vue')); }); };
-
 
 //Maps
 const GoogleMapsPage = resolve => { require.ensure(['../components/maps/google-maps/GoogleMapsPage.vue'], ()=>{ resolve(require('../components/maps/google-maps/GoogleMapsPage.vue')); }); };
 const LeafletMapsPage = resolve => { require.ensure(['../components/maps/leaflet-maps/LeafletMapsPage.vue'], ()=>{ resolve(require('../components/maps/leaflet-maps/LeafletMapsPage.vue')); }); };
-
 
 // // User Info
 // const User = resolve => { require.ensure(['../layouts/User.vue'], ()=>{ resolve(require('../layouts/User.vue')); }); };
@@ -36,7 +64,6 @@ const Login = resolve => { require.ensure(['../pages/login/Login.vue'], ()=>{ re
 const Register = resolve => { require.ensure(['../pages/register/Register.vue'], ()=>{ resolve(require('../pages/register/Register.vue')); }); };
 const Page404 = resolve => { require.ensure(['../pages/Page404.vue'], ()=>{ resolve(require('../pages/Page404.vue')); }); };
 const Page500 = resolve => { require.ensure(['../pages/Page500.vue'], ()=>{ resolve(require('../pages/Page500.vue')); }); };
-
 
 export const routes = [
     {
@@ -90,23 +117,6 @@ export const routes = [
                 path: '/components/chartjs',
                 component: ChartJS,
                 name: 'chart-js'
-            }
-        ]
-    },
-    {
-        path : '/components/maps',
-        name: 'Maps',
-        component: { render (c) { return c('router-view') }},
-        children:[
-            {
-                path: '/components/maps/google-maps',
-                component: GoogleMapsPage,
-                name: 'google-maps-page'
-            },
-            {
-                path: '/components/maps/leaflet-maps',
-                component: LeafletMapsPage,
-                name: 'leaflet-maps-page'
             }
         ]
     },

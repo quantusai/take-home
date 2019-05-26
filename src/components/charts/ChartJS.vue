@@ -2,20 +2,47 @@
   <div class="animated fadeIn">
     <div class="row">
       <div class="col-sm-6">
-        <card header-text="Line Chart">
+        <b-card header-text="Line Chart">
           <div class="chart-wrapper">
             <line-chart-js/>
           </div>
-        </card>
+        </b-card>
       </div>
       <div class="col-sm-6">
-        <card header-text="Bar Chart" class="mb-4">
+        <b-card header-text="Bar Chart" class="mb-4">
           <div class="chart-wrapper mb-4" >
             <bar-chart-js style="height:375px"/>
           </div>
-        </card>
+        </b-card>
       </div>
-
+      <div class="animated fadeIn">
+          <card header-text="Doughnut Chart">
+              <div class="chart-wrapper">
+                  <doughnut-chart/>
+              </div>
+          </card>
+      </div>
+      <div class="animated fadeIn">
+        <card header-text="Radar Chart">
+            <div class="chart-wrapper">
+                <radar-chart/>
+            </div>
+        </card>
+    </div>
+      <div class="animated fadeIn">
+      <card header-text="Pie Chart">
+          <div class="chart-wrapper">
+              <pie-chart/>
+          </div>
+      </card>
+  </div>
+      <div class="animated fadeIn">
+        <card header-text="Polar Area Chart">
+            <div class="chart-wrapper">
+                <polar-area-chart/>
+            </div>
+        </card>
+    </div>
     </div>
   </div>
 </template>

@@ -19,13 +19,9 @@
 export default {
   name: 'card-template',
 
-  props: [
-    'headerIcon',
-    'headerText',
-    'footerText',
-    'smallText'
-]
+  props: ['headerIcon', 'headerText', 'footerText', 'smallText']
 }
+
 </script>
 
 <style scoped>

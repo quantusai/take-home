@@ -21,6 +21,7 @@
             <img src="../../images/logo2.png" alt="Logo">
         </router-link>
 
+        <!-- <sidebar-collapse></sidebar-collapse> --> 
 
     </div>
 

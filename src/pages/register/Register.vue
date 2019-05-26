@@ -1,7 +1,7 @@
 <template>
   <div class="register">
 
-    <card header-text="Create New Account">
+    <b-card header-text="Create New Account">
       <form method="post" action="/auth/register" name="register">
         <div class="form-group">
           <div class="input-group">
@@ -30,15 +30,15 @@
           </button>
         </div>
       </form>
-    </card>
+    </b-card>
 
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Register'
-  }
+export default {
+  name: 'Register'
+}
 </script>
 
 <style lang="scss">

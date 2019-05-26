@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <card header-text="Basic Table">
+        <b-card header-text="Basic Table">
           <div class="table-responsive">
             <table class="table table-striped first-td-padding">
               <thead>
@@ -74,13 +74,13 @@
               </tbody>
             </table>
           </div>
-        </card>
+        </b-card>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <card header-text="Colors, Icons, Labels">
+        <b-card header-text="Colors, Icons, Labels">
           <div class="table-responsive">
             <table class="table table-striped table-sm color-icon-label-table">
               <thead>
@@ -173,15 +173,11 @@
               </tbody>
             </table>
           </div>
-        </card>
+        </b-card>
       </div>
     </div>
-
-
   </div>
 </template>
-
-
 
 <style lang="scss">
   .table thead tr{

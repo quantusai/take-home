@@ -1,7 +1,7 @@
 <template>
   <div class="login">
 
-    <card header-text="Welcome !">
+    <b-card header-text="Welcome !">
       <div class="card-body card-block">
         <form method="post" action="/auth/login" name="login">
           <div class="form-group">
@@ -24,7 +24,7 @@
           </div>
         </form>
       </div>
-    </card>
+    </b-card>
 
   </div>
 </template>

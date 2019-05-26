@@ -1,5 +1,5 @@
 {
-  "name": "my-vue-app",
+  "name": "take-home",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Brandon Parise <bparise@gmail.com>",
@@ -34,6 +34,7 @@
     "is-url-external": "^1.0.3",
     "jquery": "^3.4.1",
     "leaflet-map": "^0.2.1",
+    "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "progressbar.js": "^1.0.1",
     "sequelize": "4.37.6",

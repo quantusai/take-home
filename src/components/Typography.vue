@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
 
-        <card header-text="Typography">
+        <b-card header-text="Typography">
           <div class="typo-headers">
             <h1 class="pb-2 display-4">Very Important Information H1</h1>
             <h2 class="pb-2 display-5">Sections & Modal Names H2</h2>
@@ -99,7 +99,7 @@
             </div>
           </div>
 
-        </card>
+        </b-card>
 
       </div>
     </div>

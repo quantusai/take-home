@@ -1,27 +1,29 @@
 <template>
   <div class="container-fluid mt-4">
-    <h1 class="h1">Resources Manager</h1>
+    <h1 class="h1">Sources</h1>
     <b-alert :show="loading" variant="info">Loading...</b-alert>
     <b-row>
       <b-col>
+        <b-card>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
-              <th>&nbsp;</th>
+                <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="resource in resources" :key="resource.id">
-              <td>{{ resource.id }}</td>
               <td>{{ resource.name }}</td>
-                <b-button size="sm" variant="primary" href="#" @click.prevent="populateResourceToEdit(resource)">Edit</b-button>&nbsp;  
-                <b-button size="sm" variant="danger" href="#" @click.prevent="deleteResource(resource.id)">X</b-button>
+              <td>
+               <router-link size="sm" variant="primary" :to="{ name: 'ResourcesManagerDetail', params: { resource: resource, thing: thingValue } }">
+                <b-button size="sm" variant="primary">view</b-button>
+              </router-link>
               </td>
             </tr>
           </tbody>
         </table>
+        </b-card>
       </b-col>
       <b-col lg="3">
         <b-card :name="(model.id ? 'Edit Resource ID#' + model.id : 'New Resource')">
@@ -45,6 +47,7 @@ export default {
   data () {
     return {
       loading: false,
+      thingValue: 'foo',
       resources: [],
       model: {}
     }

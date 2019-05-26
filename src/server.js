@@ -41,21 +41,29 @@ let database = new Sequelize({
 
 // Define our Message model
 // id, createdAt, and updatedAt are added by sequelize automatically
+
+// good example on filtering data Model queries - eg: below Message and Resource are models {}
+// http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-max
+// more information about sqlite database tuning https://www.whoishostingthis.com/compare/sqlite/optimize/
 let Message = database.define('messages', {
   title: Sequelize.STRING,
   body: Sequelize.TEXT,
   guid: Sequelize.STRING,
   source_id: Sequelize.STRING,
+  message: Sequelize.STRING,
+  status: Sequelize.STRING,
   updatedat: Sequelize.STRING,
   createdat: Sequelize.STRING
-
 })
 
 let Resource = database.define('sources', {
   name: Sequelize.STRING,
+  environment: Sequelize.STRING,
+  encoding: Sequelize.STRING,
   updatedat: Sequelize.STRING,
   createdat: Sequelize.STRING
 })
+
 
 // Initialize epilogue
 epilogue.initialize({
@@ -69,12 +77,13 @@ epilogue.initialize({
 // Create the dynamic REST resource for our Message model
 let userResource = epilogue.resource({
   model: Message,
-  endpoints: ['/posts', '/posts/:id']
+  endpoints: ['/posts', '/posts/:id'],
+  pagination: false
 })
 
 const userResource2 = epilogue.resource({
   model: Resource,
-  endpoints: ['/resources', '/resources/:id'],
+  endpoints: ['/resources', '/resources/:id']
 });
 
 // Resets the database and launches the express app on :8081

@@ -37,7 +37,7 @@ export default {
       return num.toFixed(2)
     },
 
-    startAnimate: function() {
+    startAnimate: function () {
       this.$refs.myNum.start()
     }
   }

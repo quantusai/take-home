@@ -9,14 +9,14 @@
 </template>
 
 <script>
-  import GoogleMap from './GoogleMap.vue'
+import GoogleMap from './GoogleMap.vue'
 
-  export default {
-    name: 'google-maps-page',
-    components: {
-      GoogleMap
-    }
+export default {
+  name: 'google-maps-page',
+  components: {
+    GoogleMap
   }
+}
 </script>
 
 <style lang="scss">

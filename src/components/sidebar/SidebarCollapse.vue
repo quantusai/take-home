@@ -4,21 +4,20 @@
     </a>
 </template>
 <script>
-export default{
-    data(){
-        return{
-            clickable: true
-        }
-    },
-    methods: {
-        handleSidebarToggle(){
-            if( this.clickable ){
-                this.clickable = false;
-                document.body.classList.toggle('open');
-                this.clickable = true;
-            }
-
-        }
+export default {
+data (){
+return{
+    clickable: true
+  }
+},
+methods: {
+handleSidebarToggle () {
+       if( this.clickable ){
+        this.clickable = false;
+        document.body.classList.toggle('open')
+        this.clickable = true;
+      }
     }
+  }
 }
 </script>
