@@ -99,7 +99,7 @@ Set the `issuer` and copy the `clientId` into `src/router/index.js`.
 Vue.use(Auth, {
   issuer: 'https://dev-108751.okta.com/oauth2/default',
   client_id: '0oalccuta0fx2kHFl356',
-  redirect_uri: 'http://192.168.0.3:8080/implicit/callback',
+  redirect_uri: 'http://localhost:8080/implicit/callback',
   scope: 'openid profile email'
 })
 ```

@@ -76,7 +76,8 @@ epilogue.initialize({
 
 // Create the dynamic REST resource for our Message model
 let userResource = epilogue.resource({
-  model: Message,
+  model: Message,  
+  // endpoints: ['/posts', '/posts/:id'],
   endpoints: ['/posts', '/posts/:id'],
   pagination: false
 })

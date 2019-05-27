@@ -21,6 +21,7 @@ import nav from './nav'
 import Header from './components/Header.vue'
 import Sidebar from './components/Sidebar.vue'
 import AuthLayout from './layouts/AuthLayout.vue'
+import Bootstrap4Table from './components/Bootstrap4Table.vue'
 
 export default {
   data () {
@@ -31,7 +32,8 @@ export default {
   components: {
     AuthLayout,
     Header,
-    Sidebar
+    Sidebar,
+    Bootstrap4Table
   },
   computed: {
     name () {

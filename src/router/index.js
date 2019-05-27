@@ -5,6 +5,7 @@ import MessagesManager from '@/components/MessagesManager'
 import ResourcesManager from '@/components/ResourcesManager'
 import ResourcesManagerDetail from '@/components/ResourcesManagerDetail'
 import Alert from '../components/Alert.vue'
+import Bootstrap4Table from '../components/Bootstrap4Table.vue'
 import AnimateNumber from '../components/AnimateNumber.vue'
 import BootstrapProgressBar from '../components/progressbar/BootstrapProgressBar.vue'
 import Auth from '@okta/okta-vue'
@@ -48,7 +49,7 @@ const Page500 = resolve => { require.ensure(['../pages/Page500.vue'], () => { re
 Vue.use(Auth, {
   issuer: 'https://dev-108751.okta.com/oauth2/default',
   client_id: '0oalccuta0fx2kHFl356',
-  redirect_uri: 'http://192.168.0.3:8888/implicit/callback',
+  redirect_uri: 'http://localhost:8888/implicit/callback',
   scope: 'openid profile email'
 })
 
@@ -86,6 +87,14 @@ let router = new Router({
       path: '/resources-manager-detail',
       name: 'ResourcesManagerDetail',
       component: ResourcesManagerDetail,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/bootstrap-4-table',
+      name: 'Bootstrap4Table',
+      component: Bootstrap4Table,
       meta: {
         requiresAuth: true
       }

@@ -7840,6 +7840,13 @@ vue-animate-number@^0.4.2:
   dependencies:
     shifty "^2.0.2"
 
+vue-bootstrap4-table@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/vue-bootstrap4-table/-/vue-bootstrap4-table-1.1.9.tgz#fd08803b47e831287956e0a6fb8b4706101cfbf3"
+  integrity sha512-dlLZftzXSUBEWwAFHmRbmp/KuwXr6cDPR5TMUyPg5kVjsq0cLK4h1hsVne0cvvaQtaerbAl9xCHW/77wQIwtwg==
+  dependencies:
+    lodash "^4.17.11"
+
 vue-chartjs@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.4.2.tgz#0323e6a99a10a68f38d426899c3994f48596fd23"
