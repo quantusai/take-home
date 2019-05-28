@@ -2,7 +2,7 @@
     <div class="animated fadeIn">
         <card header-text="Bar Chart" class="mb-4">
             <div class="chart-wrapper mb-4" >
-                <bar-chart-js style="height:300px"/>
+                <bar-chart-js style="height:50px"/>
             </div>
         </card>
     </div>

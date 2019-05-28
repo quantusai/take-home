@@ -22,6 +22,8 @@ app.use((req, res, next) => {
   }
   let parts = req.headers.authorization.trim().split(' ')
   let accessToken = parts.pop()
+  
+  // only used for development with postman console.log(accessToken)
   oktaJwtVerifier.verifyAccessToken(accessToken)
     .then(jwt => {
       req.user = {

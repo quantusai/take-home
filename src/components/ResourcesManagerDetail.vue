@@ -33,13 +33,20 @@
                     <button type="button" class="btn btn-info m-l-10 m-b-10">Enqueued <span class="badge badge-light">{{this.status.enqueued}}</span></button>
                     <button type="button" class="btn btn-danger m-l-10 m-b-10">Error <span class="badge badge-light">{{this.status.error}}</span></button>
                 </div>
+                      <div class="col-sm-12">
+        <b-card header-text="Bar Chart" class="mb-4">
+          <div class="chart-wrapper mb-4">
+            <bar-chart-js v-if="status.error" :statusError="status.error" :statusFinished="status.finished" :statusProcessing="status.processing" :statusEnqueued="status.enqueued" style="height:175px"/>
+          </div>
+        </b-card>
+      </div>
             </div>
-
       </b-card>
       </b-col>
    </b-row>
    <b-row>
-     <b-container fluid>
+     <b-container fluid> 
+      <b-card>
     <!-- User Interface controls -->
     <b-row>
       <b-col md="6" class="my-1">
@@ -135,13 +142,16 @@
     <b-modal :id="infoModal.id" :title="infoModal.title" ok-only @hide="resetInfoModal">
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
+    </b-card>
   </b-container>
+
     </b-row>
   </div>
 </template>
 
 <script>
 // todo: implement this kind of a search Table https://vuejs.org/v2/examples/grid-component.html
+import BarChartJs from './charts/chartjs/scripts/BarChartJs.vue'
 import api from '@/api'
 export default {
   data () {
@@ -161,7 +171,7 @@ export default {
       totalRows: 1,
       currentPage: 1,
       perPage: 5,
-      pageOptions: [5, 10, 15, 100, 1000, 5000, 10000, 20000],
+      pageOptions: [5, 10, 15, 25, 50, 75, 100, 1000, 5000, 10000],
       sortBy: null,
       sortDesc: false,
       sortDirection: 'asc',
@@ -192,14 +202,15 @@ export default {
   methods: {
     async refreshMessages () {
       this.loading = true
-      // this.totalRows = this.items.length
       this.loading = false
       this.filteredList()
     },
     async filteredList () {
-      this.posts = await api.getMessages()
-      return this.posts.filter(item => {
-        let resourceId = this.$route.params.resource.id
+      let resourceId = this.$route.params.resource.id
+      this.items = await api.getMessagesBySourceId(resourceId)
+      this.totalRows = this.items.length
+      // console.log(this.items)
+      return this.items.filter(item => {
         if (item.source_id === resourceId) {
           this.items.push(item)
           for (var key in this.status) {
@@ -208,7 +219,6 @@ export default {
             }
           }
         }
-        this.totalRows = this.items.length
       })
     },
     async populateMessageToEdit (post) {
@@ -247,6 +257,9 @@ export default {
       this.totalRows = filteredItems.length
       this.currentPage = 1
     }
+  },
+  components: {
+    BarChartJs
   }
 }
 </script>

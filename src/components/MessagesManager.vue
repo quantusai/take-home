@@ -67,7 +67,7 @@ export default {
   methods: {
     async refreshMessages () {
       this.loading = true
-      this.posts = await api.getMessages()
+      this.posts = await api.getMessages('')
       this.loading = false
     },
     async populateMessageToEdit (post) {

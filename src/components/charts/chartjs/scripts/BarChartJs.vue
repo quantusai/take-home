@@ -2,32 +2,51 @@
 import { Bar } from 'vue-chartjs'
 
 export default {
+  name: 'bar-chart-js',
   extends: Bar,
+  props: {
+    statusError: Number,
+    statusFinished: Number,
+    statusProcessing: Number,
+    statusEnqueued: Number
+  },
+  data: function () {
+    return {
+
+    }
+  },
   mounted () {
     // Overwriting base render method with actual data.
+    console.log(this.statusError)
     this.renderChart(
       {
         labels: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July'
+          'Message Statuses'
         ],
         datasets: [
           {
-            label: 'Vue JS',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            label: 'Processing',
+            data: [this.statusProcessing],
             borderWidth: '0',
-            backgroundColor: '#42b983'
+            backgroundColor: '#007bff'
           },
           {
-            label: 'React JS',
-            data: [28, 48, 40, 19, 86, 27, 90],
+            label: 'Finished',
+            data: [this.statusFinished],
             borderWidth: '0',
-            backgroundColor: '#61dafb'
+            backgroundColor: '#28a745'
+          },
+          {
+            label: 'Enqueued',
+            data: [this.statusEnqueued],
+            borderWidth: '0',
+            backgroundColor: '#17a2b8'
+          },
+          {
+            label: 'Error',
+            data: [this.statusError],
+            borderWidth: '0',
+            backgroundColor: '#dc3545'
           }
         ]
       },
@@ -39,14 +58,14 @@ export default {
         scales: {
           xAxes: [
             {
-              display: false,
+              display: true,
               categoryPercentage: 1,
               barPercentage: 0.5
             }
           ],
           yAxes: [
             {
-              display: false
+              display: true
             }
           ]
         }

@@ -24,6 +24,9 @@ export default {
   getMessages () {
     return this.execute('get', '/posts')
   },
+  getMessagesBySourceId (id) {
+    return this.execute('get', `/posts?source_id=${id}`)
+  },
   getMessage (id) {
     return this.execute('get', `/posts/${id}`)
   },
